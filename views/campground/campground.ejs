@@ -1,0 +1,30 @@
+<%- include("../partials/header") %>
+<div class="container">
+    <header class="jumbotron">
+       <div class="container">
+            <h1>Welcome to bootcamp! </h1>
+            <a class="btn btn-primary btn-lg" href="/campground/new"> Add new bootcamp! </a>
+         </div>
+        </header>
+        <div class="row text-center"> 
+             <% camps.forEach(function(camps){ %>
+                 <div class="col-md-4 col-sm-6">
+                       <div class="thumbnails">
+                          <a class="img-fluid img-thumbnail">
+                            <img src="<%= camps.image %>" >
+                          </a>
+                            
+                       </div>
+                       <div class="caption">
+                            <h4> <%= camps.name %></h4>
+                       </div>
+                       <p>
+                        <a href="/campground/<%= camps._id %>" class="btn btn-primary">More Info</a>
+                       </p>
+                 </div>
+                 
+                <% }) %>
+        </div>    
+
+</div>
+<%- include("../partials/footer") %>

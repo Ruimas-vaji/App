@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bootcamp</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script
+	  src="https://code.jquery.com/jquery-3.5.1.js"
+	  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+	  crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" type="text/javascript" charset="utf-8" async defer></script>
+</head>
+<body>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">Bootcamp!</a>
+      <div class="collapse navbar-collapse justify-content-between">
+            <ul class="navbar-nav ml-auto">
+               <% if (!currentUser) { %>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/login">Login <span class="sr-only">(current)</span></a>
+                    </li>
+                   <li class="nav-item active">
+                    <a class="nav-link" href="/register">Sign UP! <span class="sr-only">(current)</span></a>
+                   </li>
+               <% } else { %>
+                        <li style=" color:#2dfaec; margin-top:8px" class="nav-item active">
+                            Signed in as <%= currentUser.username %>
+                        </li>
+                         <li class="nav-item active">
+                            <a class="nav-link" href="/logout">Log Out <span class="sr-only">(current)</span></a>
+                         </li>
+               <% } %>
+               </li>
+                 
+            </ul> 
+      </div> 
+ </nav>
